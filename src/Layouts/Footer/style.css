@@ -1,0 +1,31 @@
+.un_line{
+    position: relative;
+}
+.un_line::after{
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    display: block;
+    width: 90px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 3px;
+    background-color: #DB241E;
+}
+.un_line1{
+    position: relative;
+}
+.un_line1::after{
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 90px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 3px;
+    background-color: #DB241E;
+}

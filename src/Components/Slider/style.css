@@ -1,0 +1,27 @@
+.slider_com{
+    position: relative;
+    overflow: hidden;
+    width: 98% !important;
+}
+.slider_text{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.text{
+    margin-left: 20px;
+}
+.slider_text:hover{
+    background-color: #DB241E;
+}
+.slider_text:hover::after{
+    content: "\203A";
+    font-size: 20px;
+    position: absolute;
+    right: 10%;
+    top: 23%;
+}
