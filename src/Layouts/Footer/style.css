@@ -29,3 +29,18 @@
     height: 3px;
     background-color: #DB241E;
 }
+.footer{
+    width: 50%;
+}
+.footer_con{
+    width: 60%;
+}
+
+@media (max-width: 500px){
+    .footer{
+        width: 100%;
+    } 
+    .footer_con{
+        width: 100%;
+    }
+}
