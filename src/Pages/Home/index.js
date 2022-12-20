@@ -4,6 +4,7 @@ import image1 from '../../Assets/Images/image_1.png';
 import { Container, Typography } from '@mui/material';
 import './style.css';
 import { Mainbutton } from '../../Components/Button';
+import { SubFooter } from '../../Layouts/Footer';
 import Slider from '../../Components/Slider';
 
 const Home = () => {
@@ -30,6 +31,7 @@ const Home = () => {
             <Mainbutton text="View all Menu"/>
             </div>
     </Container>
+    <SubFooter/>
     </>
   )
 }

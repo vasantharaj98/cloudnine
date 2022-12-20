@@ -9,7 +9,7 @@ import Ourmenu from '../src/Pages/Menu/index';
 import OurLocation from '../src/Pages/Location/index';
 import Aboutus from '../src/Pages/About/index';
 import Header from '../src/Layouts/Header/index';
-import Footer from '../src/Layouts/Footer/index'
+import {Footer} from '../src/Layouts/Footer/index'
 
 
 const RouteRoute = () => {

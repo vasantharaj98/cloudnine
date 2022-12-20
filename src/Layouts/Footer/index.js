@@ -13,7 +13,7 @@ import Twitter from '../../Assets/Images/Twitter.png';
 import Facebook_Mess from '../../Assets/Images/Facebook_messenger.png';
 import './style.css';
 
-const Footer = () => {
+export const SubFooter = () => {
   return (
     <Container sx={{marginTop: 5}}>
             <Typography className='un_line' variant="h" component="h2">Find Cloud 9 Restaurant at,</Typography>
@@ -51,6 +51,12 @@ const Footer = () => {
         </Grid>
       </Grid>
     </Box>
+    </Container>
+  )
+}
+export const Footer = () => {
+    return (
+    <Container>
     <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop: 50, marginBottom: 50}}>
         <div className='footer'>
     <Typography className='un_line1' variant="h" component="h2" sx={{textAlign: 'center'}}>Connect with us @</Typography>
@@ -80,5 +86,3 @@ const Footer = () => {
     </Container>
   )
 }
-
-export default Footer
