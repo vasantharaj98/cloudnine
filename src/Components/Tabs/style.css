@@ -1,7 +1,7 @@
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+.Mui-selected {
     color: #DB241E !important;
 }
-.css-10d9dml-MuiTabs-indicator{
+.MuiTabs-indicator{
     background-color: #DB241E !important; 
     left: 0 !important;
     width: 3px !important;
