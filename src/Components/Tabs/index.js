@@ -5,238 +5,9 @@ import Tab from '@mui/material/Tab';
 import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import './style.css';
-
-const tab = [
-    {name: "Salads"},
-    {name: "Wings"} ,
-    {name: "Appetizers"},
-    {name: "Cloud BBQ"},
-    {name: "Main"},
-    {name: "Kids Menu"},
-    {name: "Classics"},
-    {name: "Sandwiches"},
-    {name: "Sides"},
-    {name: "Pastas"},
-    {name: "Burgers"},
-    {name: "Poutines"},
-    {name: "Wraps"},
-    {name: "Shareables"},
-    {name: "Desserts"}
- ]
-
- const tabPanel = [
-    {name: "Salads",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Wings",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Appetizers",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Cloud BBQ",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Main",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Kids Menu",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Classics",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Sandwiches",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Sides",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Pastas",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Burgers",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Poutines",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Wraps",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Shareables",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
-    {name: "Desserts",
-    tag: "choice of dressing: Balsamic vinegar | Caesar | Greek | Ranch | Blue cheese",
-    menu: [{
-        menuName: "CAESAR SALAD",
-        menuCoice: "Romaine hearts, croutons, bacon bits, parmesan cheese and creamy Caesar dressing",
-        price: "$ 12.45"
-    },
-    {
-        menuName: "GREEK SALAD",
-        menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
-        price: "$ 12.45"
-    }
-    ]
-    },
- ]
-
+import Paper from '@mui/material/Paper';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -271,8 +42,21 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish}) {
   const [value, setValue] = React.useState(0);
+
+
+  const updatedDish = dishes.map((e)=> e.dishname);
+  const updatedQty = dishes.map((e)=> e.qty);
+
+  // const cart = [];
+
+  // React.useEffect(()=>{
+  //   const dish = dishname;
+  //   const qty = count;
+
+  //   cart.push()
+  // },[dishname])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -287,7 +71,7 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ background: '#fafafa', paddingRight: 5, py: 2}}
+        sx={{ background: '#fafafa', paddingRight: 5, py: 2, overflow:"initial"}}
       >
         {tab.map((val, index)=>{
             return(
@@ -305,16 +89,40 @@ export default function VerticalTabs() {
                 </div>
                 {val.menu.map((v)=>{
                     return(
-                        <div style={{display:'flex', gap: 200, justifyContent:'space-between' ,alignItems:'center', marginTop: 20}}>
+                        <div style={{display:'flex', justifyContent:'space-between' ,alignItems:'flex-start', marginTop: 20}}>
                         <div>
-                    <Typography variant="h" component="h4">{v.menuName}</Typography>
-                    <Typography variant="p" component="p">{v.menuCoice}        
+                    <Typography variant="h" component="h3">{v.menuName}</Typography>
+                    <Typography variant="p" component="p" sx={{ lineHeight: 1.7}}>{v.menuCoice}        
                      </Typography>
                         </div>
-                        <div>
-                            <Button sx={{color:'#fff', px: 2, py: 0.25, background:'#DB241E'}}>Add</Button>
-                            <Typography variant="h" component="h4" sx={{marginLeft: 3}}>{v.price} 
+                        <div style={{display: "flex", justifyContent:"space-between", gap:"15px", alignItems:"center"}}>
+                        {v?.price && v?.price.map((pr, index)=>{
+                              return(
+                              <div key={index}  style={{display: "flex", justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
+                                {(!updatedDish.includes(`${v.menuName} ${pr.size}`)) ?
+                                <Button sx={{color:'#fff', width: "80px", height:"32px", lineHeight:"19px", background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} onClick={() => {
+                                  setDish({dishname: `${v.menuName} ${pr.size}`, qty: 1, price: pr.price});
+                                }}>Add</Button>
+                                  :
+                                  <Paper elevation={0} sx={{color:'#fff', width: "80px", height:"32px", lineHeight:"19px", background:'#DB241E', display: "flex", justifyContent:"space-between", alignItems:"center"}}>
+                                  <Button sx={{minWidth: 0}}
+                                   onClick={() => {
+                                     setDish({dishname: `${v.menuName} ${pr.size}`, qty: Math.max(updatedQty[updatedDish.indexOf(`${v.menuName} ${pr.size}`)] - 1, 0), price: pr.price});
+                                   }}
+                                  ><RemoveIcon fontSize="small" sx={{color: "#fff"}}/></Button>
+                                  {(dishes?.filter((e)=> e.dishname === `${v.menuName} ${pr.size}`))[0]?.qty}
+                                  {/* {updatedQty[updatedDish.indexOf(`${v.menuName} - ${pr.size}`)]} */}
+                                  <Button sx={{minWidth: 0}} onClick={() => {
+                                    setDish({dishname: `${v.menuName} ${pr.size}`, qty:  Math.max(updatedQty[updatedDish.indexOf(`${v.menuName} ${pr.size}`)] + 1), price: pr.price});
+                                  }}><AddIcon sx={{color: "#fff"}} fontSize="small" /></Button>
+                                  </Paper>
+                                }
+                              <Typography variant="h" component="h4" sx={{whiteSpace:"nowrap"}}>{pr.size} ₹{pr.price} 
                              </Typography>
+                            </div>
+                              )
+                            })
+                            }
                         </div>
                     </div>
                     )

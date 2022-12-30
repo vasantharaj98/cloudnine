@@ -1,12 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SubFooter } from '../../Layouts/Footer';
-import { Button, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import { Typography } from '@mui/material';
-import {ShoppingCartOutlined} from '@mui/icons-material';
-import Badge from '@mui/material/Badge';
-import Tabs from '../../Components/Tabs/index'
+import Tabs from '../../Components/Tabs/index';
+import Modal from '../../Components/Modal/index';
+import {tabPanel} from './menu'
+
+const tab = [
+  {name: "Salads"},
+  {name: "Wings"} ,
+  {name: "Appetizers"},
+  {name: "Cloud BBQ"},
+  {name: "Main"},
+  {name: "Kids Menu"},
+  {name: "Classics"},
+  {name: "Sandwiches"},
+  {name: "Sides"},
+  {name: "Pastas"},
+  {name: "Burgers"},
+  {name: "Poutines"},
+  {name: "Wraps"},
+  {name: "Shareables"},
+  {name: "Desserts"}
+]
 
 const Menu = () => {
+  const [cartcount, setCartcount] = useState(0);
+  const [dishes, setDishes] =useState([]);
+
+  const [dish, setDish] = useState({dishname:"", qty: 0, price: ""});
+
+  React.useEffect(()=>{
+    const dish1 = dishes;
+    const onedish = dish1.filter((e)=>e.dishname !== dish.dishname);
+    if(onedish){
+      dish.qty !== 0 && onedish.push(dish);
+    }
+    setDishes(onedish);
+  },[dish]);
+
+  useEffect(()=>{
+    setCartcount(dishes.length);
+  },[dishes, setCartcount]);
+
+  console.log("dishes", dishes)
+
   return (
     <>
     <Container sx={{marginTop: 13}}>
@@ -16,14 +54,10 @@ const Menu = () => {
       <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</Typography>
       </div>
       <div>
-        <Button sx={{color: '#000', textTransform: 'none'}}>
-        <Typography variant="p" component="h3" sx={{marginRight: 1}}> Cart</Typography>
-        <Badge color="primary" badgeContent={0} showZero>
-        <ShoppingCartOutlined sx={{color: '#DB241E'}}></ShoppingCartOutlined>
-      </Badge>  </Button>
+        <Modal cartcount={cartcount} dishes={dishes} setDishes={setDishes}></Modal>
       </div>
       </div>
-      <Tabs/>
+      <Tabs tab={tab} tabPanel={tabPanel} dishes={dishes} dish={dish} setDish={setDish}/>
     </Container>
     <SubFooter/>
     </>
