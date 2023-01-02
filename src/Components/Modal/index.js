@@ -73,6 +73,38 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
     setDetail(false);
     setOrder(false);
   };
+
+  const totalAmount = dishes.reduce((accumulator, object) =>{return accumulator + (object.qty * object.price)}, 0).toFixed(2);
+
+  const [dishdata, setDishdata] = React.useState({name:'', phone:'', email:'', message:'', order: [], total: ""});
+
+  React.useEffect(()=>{
+      const updateDish = dishes.filter((e)=> e.qty !== 0 )
+      setDishdata({...dishdata, order: updateDish, total: totalAmount})
+  },[dishes]);
+
+  console.log("dishes", dishes);
+
+  const submitData = (e) =>{
+    e.preventDefault();
+      fetch('http://localhost:5000/dish', {
+         method: 'POST',
+         body: JSON.stringify(dishdata),
+         headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+         },
+      })
+         .then((res) => {
+         res.json();
+         setOrder(true);
+         setDishes([]);
+         }
+         )
+         .catch((err) => {
+            console.log(err.message);
+         });
+   };
+
 if(!detail && !order)
   return (
     <div>
@@ -96,6 +128,11 @@ if(!detail && !order)
             Your Orders
           </Typography>
           <Divider/>
+          {dishes.length === 0 && 
+          <Typography component="h4" variant='p' sx={{padding: 4, textAlign:'center'}}>
+          No Orders
+        </Typography>
+        }
           {dishes.map((e, index)=>{
             return(
                 <div key={index}>
@@ -133,10 +170,10 @@ if(!detail && !order)
                     Total Items ({cartcount}) :
                     </Typography>
                     <Typography component="p" variant='p'>
-                    ${(dishes.reduce((accumulator, object) =>{return accumulator + (object.qty * object.price)}, 0)).toFixed(2)}
+                    ${totalAmount}
                     </Typography>
         </div>
-        <Button sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} onClick ={ ()=> {setDetail(true)}}>Proceed</Button>
+        <Button disabled={dishes.length === 0 ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510"}}} onClick ={ ()=> {setDetail(true)}}>Proceed</Button>
         </DialogActions>
       </BootstrapDialog>
     </div>
@@ -175,22 +212,22 @@ if(detail && !order)
                 noValidate
                 autoComplete="off"
                 >
-                <TextField id="outlined-basic" label="Name" variant="outlined" />
-                <TextField id="outlined-basic" label="Email" variant="outlined" />
-                <TextField id="outlined-basic" label="Phone Number" variant="outlined" />
-                <TextField id="outlined-basic" multiline rows={3} maxRows={5} label="Got Something To Say" variant="outlined" />
+                <TextField id="outlined-basic" required type="text" label="Name" variant="outlined" onChange={(e)=> setDishdata({...dishdata, name: e.target.value})}/>
+                <TextField id="outlined-basic" required type="email" label="Email" variant="outlined" onChange={(e)=> setDishdata({...dishdata, email: e.target.value})}/>
+                <TextField id="outlined-basic" required type="number" label="Phone Number" variant="outlined"  onChange={(e)=> setDishdata({...dishdata, phone: e.target.value})}/>
+                <TextField id="outlined-basic" multiline rows={3} maxRows={5} label="Got Something To Say" variant="outlined"  onChange={(e)=> setDishdata({...dishdata, message: e.target.value})}/>
             </Box>
         </DialogContent>
         <DialogActions sx={{my: 2}}>
         <div style={{marginRight: 30}}>
         <Typography component="h4" variant='p'>
-                    Total Items (3) :
+                    Total Items ({cartcount}) :
                     </Typography>
                     <Typography component="p" variant='p'>
-                    $8.45
+                    ${totalAmount}
                     </Typography>
         </div>
-        <Button sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} onClick ={ ()=> {setOrder(true)}}>Place Order</Button>
+        <Button disabled={dishdata.name === "" || dishdata.email === "" || dishdata.phone === "" ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} type="submit" onClick ={submitData}>Place Order</Button>
         </DialogActions>
       </BootstrapDialog>
     </div>

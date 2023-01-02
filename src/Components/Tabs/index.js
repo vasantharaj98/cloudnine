@@ -81,7 +81,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish}) {
       </Tabs>
       {tabPanel.map((val, index)=>{
         return(
-            <TabPanel value={value} index={index}>
+            <TabPanel value={value} index={index} style={{width: '100%'}}>
             <div>
                 <div>
                 <Typography variant="h" component="h3" sx={{color:'#DB241E'}}>{val.name}</Typography>

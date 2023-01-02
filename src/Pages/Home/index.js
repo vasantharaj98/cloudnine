@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import banner from '../../Assets/Images/Frame_1.png';
 import image1 from '../../Assets/Images/image_1.png';
 import { Container, Typography } from '@mui/material';
@@ -8,6 +8,21 @@ import { SubFooter } from '../../Layouts/Footer';
 import Slider from '../../Components/Slider';
 
 const Home = () => {
+
+  const [user, setUser] = useState([]);
+
+  const fetchData = async () => {
+    return await fetch("http://localhost:5000/dish")
+          .then((response) => response.json())
+          .then((data) => setUser(data));
+  }
+
+  useEffect(() => {
+    fetchData();
+  },[])
+
+  console.log("user", user);
+
   return (
     <>
     <div className='banner'>

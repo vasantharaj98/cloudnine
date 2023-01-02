@@ -43,8 +43,6 @@ const Menu = () => {
     setCartcount(dishes.length);
   },[dishes, setCartcount]);
 
-  console.log("dishes", dishes)
-
   return (
     <>
     <Container sx={{marginTop: 13}}>
