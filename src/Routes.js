@@ -1,29 +1,28 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
     BrowserRouter as Router,
     Routes,
     Route,
   } from "react-router-dom";
+import Layout from './Layout';
 import Home from '../src/Pages/Home/index';
 import Ourmenu from '../src/Pages/Menu/index';
 import OurLocation from '../src/Pages/Location/index';
 import Aboutus from '../src/Pages/About/index';
-import Header from '../src/Layouts/Header/index';
-import {Footer} from '../src/Layouts/Footer/index'
-
 
 const RouteRoute = () => {
+  const [selectid, setSelectid] = useState('');
+  const [menu, setMenu] = useState(0);
   return (
-    <Router>
-        <Header/>
         <Routes>
+          <Route path='/' element={<Layout menu={menu} selectid={selectid} setSelectid={setSelectid}/>}>
           <Route
             path="/"
-            element={<Home/>}
+            element={<Home selectid={selectid} setSelectid={setSelectid} setMenu={setMenu}/>}
           ></Route>
           <Route
             path="/ourmenu"
-            element={<Ourmenu/>}
+            element={<Ourmenu menu={menu}/>}
           ></Route>
           <Route
             path="/ourlocation"
@@ -33,9 +32,8 @@ const RouteRoute = () => {
             path="/aboutus"
             element={<Aboutus/>}
           ></Route>
-        </Routes>
-        <Footer/>
-    </Router>
+          </Route>
+    </Routes>
   )
 }
 

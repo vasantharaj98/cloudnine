@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 import { Mainbutton } from '../../Components/Button';
 import Divider from '@mui/material/Divider';
@@ -43,11 +43,13 @@ export const SubFooter = () => {
             </div>
         </div>
         <div style={{marginTop: 25}}>
+            <Link href='https://goo.gl/maps/he4DSmJFNSpXfGUu6' target="_blank" sx={{textDecoration:"none"}}>
             <Mainbutton text="View on map"/>
+            </Link>
         </div>
         </Grid>
         <Grid item md={6}>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39117.31034872958!2d-101.73132388919485!3d57.88694552935808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52452c333d24e933%3A0x6610ab595a2e0222!2sBrochet%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sin!4v1671423478037!5m2!1sen!2sin" width="100%" height="100%" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.0562878022993!2d-108.3075308841829!3d52.785293124286774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x530605ffa0526659%3A0x132a8543d8de43c2!2sHopeview!5e0!3m2!1sen!2sin!4v1672732810933!5m2!1sen!2sin" width="100%" height="100%" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </Grid>
       </Grid>
     </Box>

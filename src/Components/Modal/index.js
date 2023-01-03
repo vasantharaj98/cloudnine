@@ -83,11 +83,9 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
       setDishdata({...dishdata, order: updateDish, total: totalAmount})
   },[dishes]);
 
-  console.log("dishes", dishes);
-
   const submitData = (e) =>{
     e.preventDefault();
-      fetch('http://localhost:5000/dish', {
+      fetch('https://cloud-9-bar-grill.onrender.com/dish', {
          method: 'POST',
          body: JSON.stringify(dishdata),
          headers: {
@@ -98,6 +96,7 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
          res.json();
          setOrder(true);
          setDishes([]);
+         setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""})
          }
          )
          .catch((err) => {

@@ -42,21 +42,15 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish}) {
+export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu}) {
   const [value, setValue] = React.useState(0);
-
 
   const updatedDish = dishes.map((e)=> e.dishname);
   const updatedQty = dishes.map((e)=> e.qty);
 
-  // const cart = [];
-
-  // React.useEffect(()=>{
-  //   const dish = dishname;
-  //   const qty = count;
-
-  //   cart.push()
-  // },[dishname])
+  React.useEffect(()=>{
+    setValue(menu);
+  },[menu])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

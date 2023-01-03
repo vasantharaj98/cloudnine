@@ -37,9 +37,8 @@ const navItems = [
 }];
 
 function DrawerAppBar(props) {
-  const { windows } = props;
+  const {menu, selectid, setSelectid, windows } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [selectid, setSelectid] = useState('');
 
 
   const handleDrawerToggle = () => {
@@ -64,13 +63,15 @@ const selectedMenu = (id) => {
       default:
         return setSelectid('Home');
     }
-  }, [selectid]);
+  }, [selectid, setSelectid, menu]);
 
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
+      <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
       <img src={logo} alt='logo' width={80}></img>
+      </Link>
       </Typography>
       <Divider />
       <List>
@@ -107,7 +108,9 @@ const selectedMenu = (id) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
+          <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
             <img src={logo} alt='logo' width={80}></img>
+            </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 8 }}>
             {navItems.map((item) => (

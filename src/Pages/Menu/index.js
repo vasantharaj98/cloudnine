@@ -24,7 +24,7 @@ const tab = [
   {name: "Desserts"}
 ]
 
-const Menu = () => {
+const Menu = ({menu}) => {
   const [cartcount, setCartcount] = useState(0);
   const [dishes, setDishes] =useState([]);
 
@@ -55,7 +55,7 @@ const Menu = () => {
         <Modal cartcount={cartcount} dishes={dishes} setDishes={setDishes}></Modal>
       </div>
       </div>
-      <Tabs tab={tab} tabPanel={tabPanel} dishes={dishes} dish={dish} setDish={setDish}/>
+      <Tabs tab={tab} tabPanel={tabPanel} dishes={dishes} dish={dish} setDish={setDish} menu={menu}/>
     </Container>
     <SubFooter/>
     </>
