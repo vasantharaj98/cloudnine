@@ -22,6 +22,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 import { Mainbutton } from '../../Components/Button';
+import { Link } from '@mui/material';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -61,10 +62,12 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
+export default function CustomizedDialogs({cartcount, dishes, setDishes, setLoader}) {
   const [open, setOpen] = React.useState(false);
   const [detail, setDetail] = React.useState(false);
   const [order, setOrder] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const [failure, setFailure] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -84,6 +87,7 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
   },[dishes]);
 
   const submitData = (e) =>{
+    setLoader(true);
     e.preventDefault();
       fetch('https://cloud-9-bar-grill.onrender.com/dish', {
          method: 'POST',
@@ -96,11 +100,15 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes}) {
          res.json();
          setOrder(true);
          setDishes([]);
-         setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""})
+         setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
+         setLoader(false);
+         setSuccess(true);
          }
          )
          .catch((err) => {
             console.log(err.message);
+            setSuccess(false);
+            setLoader(false);
          });
    };
 
@@ -251,14 +259,13 @@ if(detail && !order)
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom component="h4" variant='p' sx={{paddingBottom: 1, textAlign:"center"}}>
-            Thanks for Ordering!
+          {success ? "Thanks for Ordering!" : "Oops! Order is failed"}  
           </Typography>
           <Typography gutterBottom component="h4" variant='p' sx={{padding: 1, textAlign:"center", color: "#DB241E", background:"#ffdfdd", py: 2}}>
-            Your order has been placed
+           {success ? "Your order has been placed" : "Order is Not Placed"} 
           </Typography>
           <Typography component="p" variant='p' sx={{padding: 1, textAlign:"center", color: "#DB241E", lineHeight: 2}}>
-          An email has been sent for your reference.
-            You will get a notification to your mobile number regarding status of your order.
+           {success && "An email has been sent for your reference. You will get a notification to your mobile number regarding status of your order."}
           </Typography>
           <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', gap: 5, margin: 15, flexDirection: 'column'  }}>
             <div style={{display: 'flex', justifyContent: 'spaceBetween'}}>
@@ -274,7 +281,9 @@ if(detail && !order)
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39117.31034872958!2d-101.73132388919485!3d57.88694552935808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52452c333d24e933%3A0x6610ab595a2e0222!2sBrochet%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sin!4v1671423478037!5m2!1sen!2sin" width="300px" height="200px" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', marginTop: 25}}>
+        <Link href='https://goo.gl/maps/he4DSmJFNSpXfGUu6' target="_blank" sx={{textDecoration:"none"}}>
             <Mainbutton text="View on map"/>
+            </Link>
         </div>
         </DialogContent>
       </BootstrapDialog>

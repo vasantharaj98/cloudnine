@@ -24,7 +24,7 @@ const tab = [
   {name: "Desserts"}
 ]
 
-const Menu = ({menu}) => {
+const Menu = ({menu, setLoader}) => {
   const [cartcount, setCartcount] = useState(0);
   const [dishes, setDishes] =useState([]);
 
@@ -52,7 +52,7 @@ const Menu = ({menu}) => {
       <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</Typography>
       </div>
       <div>
-        <Modal cartcount={cartcount} dishes={dishes} setDishes={setDishes}></Modal>
+        <Modal cartcount={cartcount} setLoader={setLoader} dishes={dishes} setDishes={setDishes}></Modal>
       </div>
       </div>
       <Tabs tab={tab} tabPanel={tabPanel} dishes={dishes} dish={dish} setDish={setDish} menu={menu}/>

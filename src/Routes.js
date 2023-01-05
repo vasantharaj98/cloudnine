@@ -10,7 +10,7 @@ import Ourmenu from '../src/Pages/Menu/index';
 import OurLocation from '../src/Pages/Location/index';
 import Aboutus from '../src/Pages/About/index';
 
-const RouteRoute = () => {
+const RouteRoute = ({setLoader}) => {
   const [selectid, setSelectid] = useState('');
   const [menu, setMenu] = useState(0);
   return (
@@ -22,7 +22,7 @@ const RouteRoute = () => {
           ></Route>
           <Route
             path="/ourmenu"
-            element={<Ourmenu menu={menu}/>}
+            element={<Ourmenu menu={menu} setLoader={setLoader}/>}
           ></Route>
           <Route
             path="/ourlocation"
