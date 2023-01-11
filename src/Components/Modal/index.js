@@ -214,7 +214,7 @@ if(detail && !order)
                     justifyContent:"center",
                     alignItems: 'center',
                     flexDirection:'column',
-                 '& > :not(style)': { m: 1, width: '35ch' },
+                 '& > :not(style)': { m: 1, maxWidth: '35ch', width:'100%' },
                 }}
                 noValidate
                 autoComplete="off"
