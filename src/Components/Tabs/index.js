@@ -65,7 +65,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ background: '#fafafa', paddingRight: 5, py: 2, overflow:"initial"}}
+        sx={{ background: '#fafafa', paddingRight: 1, py: 2, overflow:"initial"}}
       >
         {tab.map((val, index)=>{
             return(
@@ -83,13 +83,13 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
                 </div>
                 {val.menu.map((v)=>{
                     return(
-                        <div style={{display:'flex', justifyContent:'space-between' ,alignItems:'flex-start', marginTop: 20}}>
+                        <div className='tabPanel' style={{display:'flex', justifyContent:'space-between' ,alignItems:'flex-start', marginTop: 20}}>
                         <div>
                     <Typography variant="h" component="h3">{v.menuName}</Typography>
                     <Typography variant="p" component="p" sx={{ lineHeight: 1.7}}>{v.menuCoice}        
                      </Typography>
                         </div>
-                        <div style={{display: "flex", justifyContent:"space-between", gap:"15px", alignItems:"center"}}>
+                        <div className='adddish' style={{display: "flex", justifyContent:"center", gap:"15px", alignItems:"center"}}>
                         {v?.price && v?.price.map((pr, index)=>{
                               return(
                               <div key={index}  style={{display: "flex", justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
@@ -111,7 +111,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
                                   }}><AddIcon sx={{color: "#fff"}} fontSize="small" /></Button>
                                   </Paper>
                                 }
-                              <Typography variant="h" component="h4" sx={{whiteSpace:"nowrap"}}>{pr.size} ₹{pr.price} 
+                              <Typography variant="h" component="h4" sx={{whiteSpace:"nowrap"}}>{pr.size} ${pr.price} 
                              </Typography>
                             </div>
                               )

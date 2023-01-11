@@ -76,11 +76,13 @@ const selectedMenu = (id) => {
       <Divider />
       <List>
         {navItems.map((item) => (
+          <Link onClick={ () => selectedMenu (item.text) } to={item.path} style={{textDecoration: 'none'}}>
           <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.text} />
+              <ListItemText sx={{color:'#000'}} primary={item.text} />
             </ListItemButton>
           </ListItem>
+          </Link>
         ))}
       </List>
     </Box>

@@ -35,7 +35,7 @@ export const SubFooter = () => {
         <div style={{display: 'flex', justifyContent: 'spaceBetween', gap: 20, marginTop: 15, flexWrap: 'wrap'  }}>
             <div style={{display: 'flex', justifyContent: 'spaceBetween'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>1801 96 St #1899, North Battleford, SK S9A 0J1, Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
             </div>
             <div style={{display: 'flex', justifyContent: 'spaceBetween' }}>
                 <LocalPhoneOutlined/>
@@ -43,13 +43,13 @@ export const SubFooter = () => {
             </div>
         </div>
         <div style={{marginTop: 25}}>
-            <Link href='https://goo.gl/maps/he4DSmJFNSpXfGUu6' target="_blank" sx={{textDecoration:"none"}}>
+            <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none"}}>
             <Mainbutton text="View on map"/>
             </Link>
         </div>
         </Grid>
         <Grid item md={6}>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.0562878022993!2d-108.3075308841829!3d52.785293124286774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x530605ffa0526659%3A0x132a8543d8de43c2!2sHopeview!5e0!3m2!1sen!2sin!4v1672732810933!5m2!1sen!2sin" width="100%" height="100%" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.6977524637605!2d-79.03672116878191!3d43.84136458147075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4dfa401678975%3A0xbd54d5f97074a11!2sCLOUD%20NINE%20BAR%20%26GRILL!5e0!3m2!1sen!2sin!4v1673412721486!5m2!1sen!2sin" width="100%" height="100%" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </Grid>
       </Grid>
     </Box>
@@ -67,7 +67,7 @@ export const Footer = () => {
         <div style={{display: 'flex', justifyContent: 'spaceBetween', gap: 20, marginTop: 15 }}>
             <div style={{display: 'flex', justifyContent: 'spaceBetween' }}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>1801 96 St #1899, North Battleford, SK S9A 0J1, Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
             </div>
             <div style={{display: 'flex', justifyContent: 'spaceBetween' }}>
                 <LocalPhoneOutlined/>

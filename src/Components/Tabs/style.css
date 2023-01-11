@@ -10,3 +10,12 @@ button{
     text-transform: none !important;
     align-items: flex-start !important;
 }
+
+@media (max-width: 500px){
+    .tabPanel{
+        flex-direction: column;
+    }
+    .adddish{
+        flex-wrap: wrap;
+    }
+}

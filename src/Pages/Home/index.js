@@ -16,9 +16,8 @@ const Home = ({setSelectid, setMenu}) => {
         <img src={banner} className="banner_bg" alt='banner' width="100%" height="100%"></img>
         <div className='banner_text'>
             <img src={image1} alt='banner'></img>
-            <Typography className='head_text' variant="h" component="h2" sx={{marginTop: 1, width: "70%", lineHeight: 2}}>Find out whats everyone’s MMMM-ing about!</Typography>
-            <Typography className='para' variant="p" component="p" sx={{marginTop: 3, width: "70%", lineHeight: 2}}>It's the season for comfort food! Cozy up at home or gather with friends and family at Boston Pizza to enjoy our delicious NEW Fall Menu.
-            FIND OUT MORE
+            {/* <Typography className='head_text' variant="h" component="h2" sx={{marginTop: 1, width: "70%", lineHeight: 2}}>Find out whats everyone’s MMMM-ing about!</Typography> */}
+            <Typography className='para' variant="p" component="p" sx={{marginTop: 3, width: "60%", lineHeight: 2}}><b>Cloud Nine</b> is a locally owned upscale sports bar in Ajax, Ontario. We operate a family-friendly restaurant that values quality over anything else. We are well known for our pleasant atmosphere, great food and quality drinks for an affordable price. We also offer party bookings at no additional charge.
             </Typography>
             <div style={{marginTop: 25}}>
               <Link onClick={()=> setSelectid('Our Menu')} to="/ourmenu" style={{textDecoration: 'none'}}>

@@ -6,12 +6,12 @@ import { Typography } from '@mui/material';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import banner_1 from '../../Assets/Images/aboutbanner_1.png'
+import banner_1 from '../../Assets/Images/aboutbanner_1.png';
+import './style.css';
 
 const About = () => {
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -19,7 +19,9 @@ const About = () => {
     pauseOnHover: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    cssEase: "linear"
+    cssEase: "linear",
+    prevArrow: false,
+    nextArrow: false
   };
   return (
     <Container sx={{marginTop: 13}}>
@@ -31,25 +33,23 @@ const About = () => {
                 color: '#fff'
       }}
     >
-         <Grid container>
-         <Grid item md={12}>
          <div>
         <Slider {...settings}>
           <div>
-            <img src={banner_1} alt='banner'></img>
+            <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner'></img>
+          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner'></img>
+          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner'></img>
+          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
           </div>
         </Slider>
       </div>
-        </Grid>
+        <Grid container>
         <Grid item md={12} >
           <Grid item md={12} sx={{padding: 5}}>
           <Typography className='un_line' variant="h" component="h2">About us,</Typography>
