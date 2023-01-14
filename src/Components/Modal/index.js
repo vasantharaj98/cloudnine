@@ -172,12 +172,26 @@ if(!detail && !order)
           })}
         </DialogContent>
         <DialogActions sx={{my: 2}}>
-        <div style={{marginRight: 30}}>
-        <Typography component="h4" variant='p'>
-                    Total Items ({cartcount}) :
+        <div style={{ marginRight: 30}}>
+                    <Typography component="p" variant='p'>
+                    Subtotal ({cartcount} {cartcount>1? 'Items':'item'}) :
                     </Typography>
                     <Typography component="p" variant='p'>
-                    ${totalAmount}
+                    Taxes (13%) :
+                    </Typography>
+                    <Typography component="h4" variant='p'>
+                    Total :
+                    </Typography>
+        </div>
+        <div style={{marginLeft: 30,marginRight: 30}}>
+        <Typography component="p" variant='p'>
+                     ${totalAmount}
+                    </Typography>
+                    <Typography component="p" variant='p'>
+                     ${(totalAmount * 0.13 ).toFixed(2)}
+                    </Typography>
+                    <Typography component="h4" variant='p'>
+                    ${(parseFloat(totalAmount) + parseFloat(totalAmount * 0.13)).toFixed(2)}
                     </Typography>
         </div>
         <Button disabled={dishes.length === 0 ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510"}}} onClick ={ ()=> {setDetail(true)}}>Proceed</Button>
@@ -226,12 +240,26 @@ if(detail && !order)
             </Box>
         </DialogContent>
         <DialogActions sx={{my: 2}}>
-        <div style={{marginRight: 30}}>
-        <Typography component="h4" variant='p'>
-                    Total Items ({cartcount}) :
+        <div style={{ marginRight: 30}}>
+                    <Typography component="p" variant='p'>
+                    Subtotal ({cartcount} {cartcount>1? 'Items':'item'}) :
                     </Typography>
                     <Typography component="p" variant='p'>
-                    ${totalAmount}
+                    Taxes (13%) :
+                    </Typography>
+                    <Typography component="h4" variant='p'>
+                    Total :
+                    </Typography>
+        </div>
+        <div style={{marginLeft: 30,marginRight: 30}}>
+        <Typography component="p" variant='p'>
+                     ${totalAmount}
+                    </Typography>
+                    <Typography component="p" variant='p'>
+                     ${(totalAmount * 0.13 ).toFixed(2)}
+                    </Typography>
+                    <Typography component="h4" variant='p'>
+                    ${(parseFloat(totalAmount) + parseFloat(totalAmount * 0.13)).toFixed(2)}
                     </Typography>
         </div>
         <Button disabled={dishdata.name === "" || dishdata.email === "" || dishdata.phone === "" ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} type="submit" onClick ={submitData}>Place Order</Button>
