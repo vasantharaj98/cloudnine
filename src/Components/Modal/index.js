@@ -88,6 +88,8 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes, setLoad
 
   const submitData = (e) =>{
     setLoader(true);
+    // https://cloud-9-bar-grill.onrender.com/dish
+    // http://localhost:5000/dish
     e.preventDefault();
       fetch('https://cloud-9-bar-grill.onrender.com/dish', {
          method: 'POST',
@@ -306,10 +308,10 @@ if(detail && !order)
             </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems:'center'}}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39117.31034872958!2d-101.73132388919485!3d57.88694552935808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52452c333d24e933%3A0x6610ab595a2e0222!2sBrochet%2C%20MB%2C%20Canada!5e0!3m2!1sen!2sin!4v1671423478037!5m2!1sen!2sin" width="300px" height="200px" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.6977524637605!2d-79.03672116878191!3d43.84136458147075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4dfa401678975%3A0xbd54d5f97074a11!2sCLOUD%20NINE%20BAR%20%26GRILL!5e0!3m2!1sen!2sin!4v1673412721486!5m2!1sen!2sin" width="300px" height="200px" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', marginTop: 25}}>
-        <Link href='https://goo.gl/maps/he4DSmJFNSpXfGUu6' target="_blank" sx={{textDecoration:"none"}}>
+        <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none"}}>
             <Mainbutton text="View on map"/>
             </Link>
         </div>
