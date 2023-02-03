@@ -2,6 +2,10 @@
     position: relative;
     overflow: hidden;
     width: 98% !important;
+    height: 180px;
+}
+.slider_com img{
+    object-fit: cover;
 }
 .slider_text{
     position: absolute;

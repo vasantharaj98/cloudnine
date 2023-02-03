@@ -6,7 +6,8 @@ import { Typography } from '@mui/material';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import banner_1 from '../../Assets/Images/aboutbanner_1.png';
+import banner_1 from '../../Assets/Images/cloud1.JPG';
+import banner_2 from '../../Assets/Images/cloud2.JPG';
 import './style.css';
 
 const About = () => {
@@ -36,16 +37,16 @@ const About = () => {
          <div>
         <Slider {...settings}>
           <div>
-            <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
+            <img src={banner_1} width="100%" height="500px" alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
+          <img src={banner_2} width="100%" height="500px" alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
+          <img src={banner_1} width="100%" height="500px" alt='banner' style={{objectFit:'cover'}}></img>
           </div>
           <div>
-          <img src={banner_1} alt='banner' style={{objectFit:'cover'}}></img>
+          <img src={banner_2} width="100%" height="500px" alt='banner' style={{objectFit:'cover'}}></img>
           </div>
         </Slider>
       </div>

@@ -5,7 +5,9 @@ import './style.css';
 export const Mainbutton = ({text}) => {
   return (
     <button className='btn'>
-        {text} <EastOutlined sx={{marginLeft: 3}}/>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+        {text}<EastOutlined sx={{marginLeft: 1, padding: 0}}/>
+        </div>
     </button>
   )
 }

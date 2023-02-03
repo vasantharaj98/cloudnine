@@ -1,0 +1,6 @@
+@media (max-width: 500px){
+    .cart{
+        flex-direction: column;
+        gap: 25px;
+    }
+}

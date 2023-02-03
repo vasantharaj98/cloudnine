@@ -22,7 +22,16 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 import { Mainbutton } from '../../Components/Button';
+import InputAdornment from '@mui/material/InputAdornment';
 import { Link } from '@mui/material';
+import io from 'socket.io-client';
+
+const socket = io('https://cloudninebarandgrill.com', {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -88,30 +97,42 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes, setLoad
 
   const submitData = (e) =>{
     setLoader(true);
-    // https://cloud-9-bar-grill.onrender.com/dish
-    // http://localhost:5000/dish
     e.preventDefault();
-      fetch('https://cloud-9-bar-grill.onrender.com/dish', {
-         method: 'POST',
-         body: JSON.stringify(dishdata),
-         headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-         },
-      })
-         .then((res) => {
-         res.json();
-         setOrder(true);
+    socket.emit('postOrder', dishdata);
+    socket.on('order', (data) => {
+      if(data){
+          setOrder(true);
          setDishes([]);
          setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
          setLoader(false);
          setSuccess(true);
-         }
-         )
-         .catch((err) => {
-            console.log(err.message);
+      }
+      else{
             setSuccess(false);
             setLoader(false);
-         });
+      }
+    });
+      // fetch('https://cloudninebarandgrill.com/api/dish', {
+      //    method: 'POST',
+      //    body: JSON.stringify(dishdata),
+      //    headers: {
+      //       'Content-type': 'application/json; charset=UTF-8',
+      //    },
+      // })
+        //  .then((res) => {
+        //  res.json();
+        //  setOrder(true);
+        //  setDishes([]);
+        //  setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
+        //  setLoader(false);
+        //  setSuccess(true);
+        //  }
+        //  )
+        //  .catch((err) => {
+        //     console.log(err.message);
+        //     setSuccess(false);
+        //     setLoader(false);
+        //  });
    };
 
 if(!detail && !order)
@@ -173,7 +194,8 @@ if(!detail && !order)
             )
           })}
         </DialogContent>
-        <DialogActions sx={{my: 2}}>
+        <DialogActions sx={{my: 2}} className="cart">
+          <div style={{display:'flex'}}>
         <div style={{ marginRight: 30}}>
                     <Typography component="p" variant='p'>
                     Subtotal ({cartcount} {cartcount>1? 'Items':'item'}) :
@@ -195,6 +217,7 @@ if(!detail && !order)
                     <Typography component="h4" variant='p'>
                     ${(parseFloat(totalAmount) + parseFloat(totalAmount * 0.13)).toFixed(2)}
                     </Typography>
+        </div>
         </div>
         <Button disabled={dishes.length === 0 ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510"}}} onClick ={ ()=> {setDetail(true)}}>Proceed</Button>
         </DialogActions>
@@ -235,13 +258,22 @@ if(detail && !order)
                 noValidate
                 autoComplete="off"
                 >
-                <TextField id="outlined-basic" required type="text" label="Name" variant="outlined" onChange={(e)=> setDishdata({...dishdata, name: e.target.value})}/>
+                <TextField id="outlined-basic" required type="text" label="Name" 
+                variant="outlined"
+                 onChange={(e)=> setDishdata({...dishdata, name: e.target.value})}
+                 />
                 <TextField id="outlined-basic" required type="email" label="Email" variant="outlined" onChange={(e)=> setDishdata({...dishdata, email: e.target.value})}/>
-                <TextField id="outlined-basic" required type="number" label="Phone Number" variant="outlined"  onChange={(e)=> setDishdata({...dishdata, phone: e.target.value})}/>
+                <TextField id="outlined-basic" required type="number" label="Phone Number" 
+                variant="outlined"  
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">+1</InputAdornment>,
+                }}
+                onChange={(e)=> setDishdata({...dishdata, phone: e.target.value})}/>
                 <TextField id="outlined-basic" multiline rows={3} maxRows={5} label="Got Something To Say" variant="outlined"  onChange={(e)=> setDishdata({...dishdata, message: e.target.value})}/>
             </Box>
         </DialogContent>
-        <DialogActions sx={{my: 2}}>
+        <DialogActions sx={{my: 2}} className="cart">
+        <div style={{display:'flex'}}>
         <div style={{ marginRight: 30}}>
                     <Typography component="p" variant='p'>
                     Subtotal ({cartcount} {cartcount>1? 'Items':'item'}) :
@@ -263,6 +295,7 @@ if(detail && !order)
                     <Typography component="h4" variant='p'>
                     ${(parseFloat(totalAmount) + parseFloat(totalAmount * 0.13)).toFixed(2)}
                     </Typography>
+        </div>
         </div>
         <Button disabled={dishdata.name === "" || dishdata.email === "" || dishdata.phone === "" ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} type="submit" onClick ={submitData}>Place Order</Button>
         </DialogActions>
