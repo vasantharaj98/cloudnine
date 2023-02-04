@@ -26,12 +26,12 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { Link } from '@mui/material';
 import io from 'socket.io-client';
 
-const socket = io('https://cloud-9-bar-grill.onrender.com', {
-  withCredentials: true,
-  extraHeaders: {
-    "my-custom-header": "abcd"
-  }
-});
+// const socket = io('https://cloud-9-bar-grill.onrender.com', {
+//   withCredentials: true,
+//   extraHeaders: {
+//     "my-custom-header": "abcd"
+//   }
+// });
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -98,41 +98,41 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes, setLoad
   const submitData = (e) =>{
     setLoader(true);
     e.preventDefault();
-    socket.emit('postOrder', dishdata);
-    socket.on('order', (data) => {
-      if(data){
-          setOrder(true);
+    // socket.emit('postOrder', dishdata);
+    // socket.on('order', (data) => {
+    //   if(data){
+    //       setOrder(true);
+    //      setDishes([]);
+    //      setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
+    //      setLoader(false);
+    //      setSuccess(true);
+    //   }
+    //   else{
+    //         setSuccess(false);
+    //         setLoader(false);
+    //   }
+    // });
+      fetch('https://cloudninebarandgrill.com/api/dish', {
+         method: 'POST',
+         body: JSON.stringify(dishdata),
+         headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+         },
+      })
+         .then((res) => {
+         res.json();
+         setOrder(true);
          setDishes([]);
          setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
          setLoader(false);
          setSuccess(true);
-      }
-      else{
+         }
+         )
+         .catch((err) => {
+            console.log(err.message);
             setSuccess(false);
             setLoader(false);
-      }
-    });
-      // fetch('https://cloudninebarandgrill.com/api/dish', {
-      //    method: 'POST',
-      //    body: JSON.stringify(dishdata),
-      //    headers: {
-      //       'Content-type': 'application/json; charset=UTF-8',
-      //    },
-      // })
-        //  .then((res) => {
-        //  res.json();
-        //  setOrder(true);
-        //  setDishes([]);
-        //  setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
-        //  setLoader(false);
-        //  setSuccess(true);
-        //  }
-        //  )
-        //  .catch((err) => {
-        //     console.log(err.message);
-        //     setSuccess(false);
-        //     setLoader(false);
-        //  });
+         });
    };
 
 if(!detail && !order)
