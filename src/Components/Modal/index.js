@@ -26,7 +26,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { Link } from '@mui/material';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:8000', {
+const socket = io('https://cloud-9-bar-grill.onrender.com', {
   withCredentials: true,
   extraHeaders: {
     "my-custom-header": "abcd"
