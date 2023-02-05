@@ -49,7 +49,7 @@ const Menu = ({menu, setLoader}) => {
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
         <div>
       <Typography className='un_line' variant="h" component="h2">Choose from Wide Varieties of Menu</Typography>
-      <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</Typography>
+      <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>We're Proud to Serve All Kinds of Dishes Browse Through Our Menu and Find Something For Everyone</Typography>
       </div>
       <div>
         <Modal cartcount={cartcount} setLoader={setLoader} dishes={dishes} setDishes={setDishes}></Modal>

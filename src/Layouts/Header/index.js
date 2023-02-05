@@ -108,10 +108,10 @@ const selectedMenu = (id) => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginTop: 1 }}
           >
           <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
-            <img src={logo} alt='logo' width={80}></img>
+            <img src={logo} alt='logo' width={50}></img>
             </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 8 }}>

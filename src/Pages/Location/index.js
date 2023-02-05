@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { Typography, Link } from '@mui/material';
 import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 
 const Location = () => {
@@ -25,17 +25,21 @@ const Location = () => {
         <Grid item md={12}>
           <Grid item md={12}>
           <Typography className='un_line' variant="h" component="h2">Locate us,</Typography>
-            <Typography variant="p" component="p" sx={{marginTop: 4, lineHeight: 2}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 4, lineHeight: 2}}>You can visit our restaurant by locating us through google map. Happy Visiting!</Typography>
           </Grid>
           <Grid item md={12}>
           <div style={{display: 'flex', justifyContent: 'spaceBetween', gap: 20, marginTop: 15, flexWrap: 'wrap'  }}>
-            <div style={{display: 'flex', justifyContent: 'spaceBetween'}}>
+          <div>
+            <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none", display: 'flex', justifyContent: 'spaceBetween', color: '#fff'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
+            </Link>
             </div>
-            <div style={{display: 'flex', justifyContent: 'spaceBetween' }}>
+            <div>
+            <Link href='tel: +19059036360' sx={{textDecoration:"none", display: 'flex', justifyContent: 'spaceBetween', color: '#fff'}}>
                 <LocalPhoneOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>+19876543210</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>+19059036360</Typography>
+            </Link>
             </div>
         </div>
           </Grid>
