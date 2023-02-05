@@ -17,7 +17,7 @@ const Home = ({setSelectid, setMenu}) => {
         <div className='banner_text'>
             <img src={image1} alt='banner'></img>
             <Typography className='head_text' variant="h" component="h2" sx={{marginTop: 1, width:{sm: "100%", md: "70%"}, lineHeight: 2}}>A great sports bar with excellent food, drinks & an amazing atmosphere!</Typography>
-            <Typography className='para' variant="p" component="p" sx={{marginTop: 3, width:{sm: "100%", md: "60%"}, lineHeight: 2}}><b>Cloud Nine</b> is a locally owned upscale sports bar in Ajax, Ontario. We operate a family-friendly restaurant that values quality over anything else. We are well known for our pleasant atmosphere, great food and quality drinks for an affordable price. We also offer party bookings at no additional charge.
+            <Typography className='para' variant="p" component="p" sx={{marginTop:{sm: 1, md: 3}, width:{sm: "100%", md: "60%"}, lineHeight: 2}}><b>Cloud Nine</b> is a locally owned upscale sports bar in Ajax, Ontario. We operate a family-friendly restaurant that values quality over anything else. We are well known for our pleasant atmosphere, great food and quality drinks for an affordable price. We also offer party bookings at no additional charge.
             </Typography>
             <div style={{marginTop: 25}}>
               <Link onClick={()=> setSelectid('Our Menu')} to="/ourmenu" style={{textDecoration: 'none'}}>
