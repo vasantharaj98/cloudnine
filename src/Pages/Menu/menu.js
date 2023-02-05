@@ -262,11 +262,19 @@ export const tabPanel = [
             }]
   },
   {
-    menuName: "Chicken Quarter Leg",
-    menuCoice: "Jerk Chicken, served with fries, coleslaw",
+    menuName: "Jerk Chicken",
+    menuCoice: "Caribbean seasoned Chicken served with rice & seasonal vegetables",
     price: [{
       size: "",
-      price: "24.95"
+      price: "14.95"
+          }]
+  },
+  {
+    menuName: "BBQ Pork Tender",
+    menuCoice: "Grilled scaloppini pork loins smothered in smoked BBQ sauce topped with mushroom gravy & truffle fries",
+    price: [{
+      size: "",
+      price: "16.95"
           }]
   }
     ]
@@ -293,29 +301,17 @@ export const tabPanel = [
       menuName: "Souvlaki Dinner",
       menuCoice: "Greek salad,Greek potatoes,Greek rice, Tzatziki sauce",
       price: [{
-        size: "",
-        price: "5.95"
-            }]
+        size: "Chicken",
+        price: "17.95"
+            },
+            {
+            size: "Pork",
+            price: "16.95"
+                  }]
   },
   {
     menuName: "Chicken Quarter Leg",
-    menuCoice: "Chicken | Pork | Lamb",
-    price: [{
-      size: "Chicken",
-      price: "17.95"
-          },
-          {
-          size: "Pork",
-          price: "16.95"
-                },
-                {
-                  size: "Lamb",
-                  price: "19.95"
-                      }]
-  },
-  {
-    menuName: "Chicken Quarter Leg Thai",
-    menuCoice: "Choice of red or green Thai curry paste with coconut milk, chicken , shrimp or steak, sweet pepper, basil leaves, bamboo shoots, carrot, Bok choy and broccoli with rice",
+    menuCoice: "Choice of red or green Thai curry with coconut milk, sweet pepper, bamboo shoots, carrot, onions, Baby corn, Bok choy & broccoli served with rice",
     price: [{
       size: "Chicken",
       price: "16.95"
@@ -327,11 +323,7 @@ export const tabPanel = [
                 {
                   size: "Steak",
                   price: "21.95"
-                      },
-                      {
-                        size: "Veg",
-                        price: "14.95"
-                            }]
+                      }]
   },
   {
     menuName: "Butter Chicken",
@@ -350,11 +342,35 @@ export const tabPanel = [
           }]
   },
   {
-    menuName: "Ocean Bowl",
-    menuCoice: "Shrimp ,lobster tail, scallop, mussels, calamari in spicy marinara and saffron broth served with garlic bread ",
+    menuName: "Seafood Bowl",
+    menuCoice: "Salmon, Shrimp, Lobster tail, Scallop, Mussels, Calamari in spicy marinara & saffron broth served with garlic bread",
     price: [{
       size: "",
       price: "25.95"
+          }]
+  },
+  {
+    menuName: "Chicken Masala",
+    menuCoice: "Chicken, mixed vegetable in a homemade curry masala blend with coconut milk served with rice",
+    price: [{
+      size: "",
+      price: "18.95"
+          }]
+  },
+  {
+    menuName: "Baseball Steak and Shrimp Scampi",
+    menuCoice: "Seasonal vegetables, Mashed potatoes topped with roasted garlic demi-glaze",
+    price: [{
+      size: "",
+      price: "24.95"
+          }]
+  },
+  {
+    menuName: "Stuffed Baked Salmon",
+    menuCoice: "Fresh Atlantic salmon stuffed with roasted red peppers, spinach & goat cheese with linguine pasta & pesto cream sauce",
+    price: [{
+      size: "",
+      price: "22.95"
           }]
   }
     ]
@@ -436,7 +452,16 @@ export const tabPanel = [
       size: "",
       price: "14.95"
           }]
+},
+{
+  menuName: "Pulled pork Sandwich",
+  menuCoice: "Slow cooked pork tenderloin topped with coleslaw and swiss cheese on Vienna bread  served with fries and garden  salad",
+  price: [{
+    size: "",
+    price: "14.95"
+        }]
 }
+
     ]
     },
     {name: "Sides",
@@ -510,7 +535,7 @@ export const tabPanel = [
         },
         {
           size: "L",
-          price: "8.95"
+          price: "7.95"
               }]
 },
 {
@@ -550,24 +575,20 @@ export const tabPanel = [
         }]
 },
 {
-  menuName: "Home Fries",
+  menuName: "Waffle Fries",
   menuCoice: "",
   price: [{
     size: "",
-    price: "4.95"
+    price: "6.95"
         }]
 },
 {
   menuName: "Mashed Potatoes",
   menuCoice: "",
   price: [{
-    size: "M",
-    price: "3.95"
-        },
-        {
-          size: "L",
-          price: "5.95"
-              }]
+    size: "",
+    price: "5.95"
+        }]
 }
     ]
     },
@@ -606,7 +627,7 @@ export const tabPanel = [
           }]
 },
 {
-  menuName: "Ocean Linguine",
+  menuName: "Seafood Linguine",
   menuCoice: "Mussels, shrimp, calamari, scallop with marinara sauce",
   price: [{
     size: "",
@@ -630,19 +651,19 @@ export const tabPanel = [
         }]
 },
 {
-  menuName: "Stuffed Baked Salmon",
-  menuCoice: "Fresh Atlantic salmon stuffed with roasted red peppers, spinach and goat cheese with linguine pasta and pesto cream sauce",
+  menuName: "Seafood Risotto",
+  menuCoice: "Black tiger shrimp, calamaria, mussels, salmon cooked insaffron rose sause topped with green onion parmassan cheese.",
   price: [{
     size: "",
     price: "22.95"
         }]
 },
 {
-  menuName: "Risotto Funghi (Mushroom)",
-  menuCoice: "Wild mushroom, porcini mushroom on a red wine creamy sauce top with real parmesan cheeseBacon $2.95, Grilled chicken $5.45, steak $8.95 Lobster $9.95, shrimp $6.95, salmon $8.95 smoked chicken 5.45",
+  menuName: "Lobster and Shrimp Linguine",
+  menuCoice: "Lobster trail, black tiger shrimp mixed with roasted peppers and spinach served in spicy tomato sauce",
   price: [{
     size: "",
-    price: "17.95"
+    price: "23.95"
         }]
 }
     ]
@@ -698,9 +719,17 @@ export const tabPanel = [
         menuCoice: "Fresh cut fries topped with fresh cheese curds smothered in butter chicken gravy *Grilled chicken $3.45, Bacon $1.95 Mushroom $1.45 Mixed cheese $2.95, Butter Chicken $3.95",
         price: [{
           size: "",
-          price: "12.95"
+          price: "14.95"
               }]
-    }
+    },
+    {
+      menuName: "Pulled Pork Poutine",
+      menuCoice: "Fresh cut fries topped with fresh cheese curds slow cooked pulled pork, himemade gravy and scallions",
+      price: [{
+        size: "",
+        price: "14.95"
+            }]
+  }
     ]
     },
     {name: "Wraps",
@@ -722,16 +751,16 @@ export const tabPanel = [
               }]
     },
     {
-      menuName: "Golden Wrap",
-      menuCoice: "Avocado ,mushrooms roasted garlic ,red onions bell peppers, mixed greens, tomatoes and goat cheese served with fries, and garden salad",
+      menuName: "Garden Wrap",
+      menuCoice: "Bell pepper, mixed green, tomato, goat cheese, Avocado ,mushrooms roasted garlic ,red onions bell peppers, mixed greens, tomatoes and goat cheese served with fries, and garden salad",
       price: [{
         size: "",
         price: "13.95"
             }]
   },
   {
-    menuName: "Chicken Souvlaki Wrap",
-    menuCoice: "Onion, tomato, mixed green, Tzatziki served with fries, and garden salad",
+    menuName: "Souvlaki Wrap",
+    menuCoice: "Lettuce, tomato, onion, olives, tzatziki, with grilled chicked or pork wrapped in tortilla served with fries and garden salad",
     price: [{
       size: "",
       price: "14.95"
@@ -832,6 +861,82 @@ export const tabPanel = [
       size: "",
       price: "8.95"
           }]
+}
+    ]
+    },
+    {name: "Add on",
+    tag: " ",
+    menu: [{
+        menuName: "Chicken",
+        menuCoice: "",
+        price: [{
+          size: "",
+          price: "5.45"
+              }]
+    },
+    {
+        menuName: "Shrimp",
+        menuCoice: "",
+        price: [{
+          size: "",
+          price: "6.95"
+              }]
+    },
+    {
+      menuName: "Pulled Pork",
+      menuCoice: "",
+      price: [{
+        size: "",
+        price: "4.95"
+            }]
+  },
+  {
+    menuName: "Bacon",
+    menuCoice: "",
+    price: [{
+      size: "",
+      price: "1.95"
+          }]
+    },
+    {
+      menuName: "Salmon",
+      menuCoice: "",
+      price: [{
+        size: "",
+        price: "8.95"
+            }]
+  },
+  {
+    menuName: "Smoked Chicken",
+    menuCoice: "",
+    price: [{
+      size: "",
+      price: "5.45"
+          }]
+},
+{
+  menuName: "Add Cheese",
+  menuCoice: "",
+  price: [{
+    size: "",
+    price: "2.95"
+        }]
+},
+{
+  menuName: "Lobster Tail",
+  menuCoice: "",
+  price: [{
+    size: "",
+    price: "9.95"
+        }]
+},
+{
+  menuName: "Steak",
+  menuCoice: "",
+  price: [{
+    size: "",
+    price: "8.95"
+        }]
 }
     ]
     },

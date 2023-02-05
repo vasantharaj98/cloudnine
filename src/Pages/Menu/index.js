@@ -21,7 +21,8 @@ const tab = [
   {name: "Poutines"},
   {name: "Wraps"},
   {name: "Shareables"},
-  {name: "Desserts"}
+  {name: "Desserts"},
+  {name: "Add on"}
 ]
 
 const Menu = ({menu, setLoader}) => {
