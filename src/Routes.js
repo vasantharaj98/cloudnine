@@ -9,6 +9,7 @@ import Home from '../src/Pages/Home/index';
 import Ourmenu from '../src/Pages/Menu/index';
 import OurLocation from '../src/Pages/Location/index';
 import Aboutus from '../src/Pages/About/index';
+import DailySpecial from '../src/Pages/Dailyspecial/index';
 
 const RouteRoute = ({setLoader}) => {
   const [selectid, setSelectid] = useState('');
@@ -23,6 +24,10 @@ const RouteRoute = ({setLoader}) => {
           <Route
             path="/ourmenu"
             element={<Ourmenu menu={menu} setLoader={setLoader}/>}
+          ></Route>
+          <Route
+            path="/dailyspecial"
+            element={<DailySpecial/>}
           ></Route>
           <Route
             path="/ourlocation"

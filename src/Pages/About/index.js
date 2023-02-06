@@ -35,7 +35,7 @@ const About = () => {
                 sx={{
                 width: "100%",
                 height: "100%",
-                backgroundColor: '#1F1A17',
+                backgroundColor: '#080808',
                 color: '#fff'
       }}
     >

@@ -28,6 +28,10 @@ const navItems = [
     path: '/ourmenu'
 }, 
 {
+  text: 'Daily Special',
+  path: '/dailyspecial'
+}, 
+{
     text: 'Locations',
     path: '/ourlocation'
 }, 
@@ -56,6 +60,8 @@ const selectedMenu = (id) => {
        return setSelectid('Home');
        case "/ourmenu":
         return setSelectid('Our Menu');
+      case "/dailyspecial":
+          return setSelectid('Daily Special');
        case "/ourlocation":
         return setSelectid('Locations');
        case "/aboutus":
@@ -79,7 +85,7 @@ const selectedMenu = (id) => {
           <Link onClick={ () => selectedMenu (item.text) } to={item.path} style={{textDecoration: 'none'}}>
           <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText sx={{color:'#000'}} primary={item.text} />
+              <ListItemText sx={{color:'#fff'}} primary={item.text} />
             </ListItemButton>
           </ListItem>
           </Link>
@@ -101,7 +107,7 @@ const selectedMenu = (id) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color:'#DB241E' }}
           >
             <MenuIcon />
           </IconButton>
@@ -137,7 +143,7 @@ const selectedMenu = (id) => {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background:'#DB241E' }
           }}
         >
           {drawer}

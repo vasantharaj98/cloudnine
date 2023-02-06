@@ -13,7 +13,7 @@ const Location = () => {
                 width: "100%",
                 height: "100%",
                 marginTop: 2,
-                backgroundColor: '#1F1A17',
+                backgroundColor: '#080808',
                 padding: 5,
                 color: '#fff'
       }}

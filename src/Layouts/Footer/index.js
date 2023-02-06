@@ -16,14 +16,14 @@ import './style.css';
 export const SubFooter = () => {
   return (
     <Container sx={{marginTop: 5}}>
-            <Typography className='un_line' variant="h" component="h2">Find Cloud 9 Restaurant at,</Typography>
+            <Typography className='un_line' variant="h" component="h2">Find Cloud Nine Restaurant at,</Typography>
             <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>Our Cloud 9 Restaurant Could be Near You!</Typography>
             <Box
                 sx={{
                 width: "100%",
                 height: "100%",
                 marginTop: 2,
-                backgroundColor: '#1F1A17',
+                backgroundColor: '#080808',
                 padding: 5,
                 color: '#fff'
       }}
