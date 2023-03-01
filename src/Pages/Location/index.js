@@ -7,14 +7,14 @@ import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 
 const Location = () => {
   return (
-    <Container sx={{marginTop: 13}}>
+    <Container sx={{marginTop: 20}}>
     <Box
                 sx={{
                 width: "100%",
                 height: "100%",
                 marginTop: 2,
                 backgroundColor: '#080808',
-                padding: 5,
+                padding: 3,
                 color: '#fff'
       }}
     >
@@ -32,7 +32,7 @@ const Location = () => {
           <div>
             <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none", display: 'flex', justifyContent: 'spaceBetween', color: '#fff'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR & GRILL 368 Bayly St W, Ajax, ON L1S 1P1, Canada</Typography>
             </Link>
             </div>
             <div>
@@ -42,6 +42,29 @@ const Location = () => {
             </Link>
             </div>
         </div>
+          </Grid>
+          <Grid item md={12} sx={{marginTop: 4}}>
+          <Typography  variant="h" component="h4">Timings:</Typography>
+          <div style={{display:'flex', gap: '40px'}}>
+            <div style={{opacity: 0.6}}>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Monday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Tuesday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Wednesday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Thursday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Friday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Saturday</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>Sunday</Typography>
+            </div>
+            <div>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - Midnight</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - Midnight</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - Midnight</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - Midnight</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - 02:00 am</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - 01:00 am</Typography>
+            <Typography variant="p" component="p" sx={{marginTop: 1, lineHeight: 2}}>11:00 am - Midnight</Typography>
+            </div>
+          </div>
           </Grid>
         </Grid>
       </Grid>

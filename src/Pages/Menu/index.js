@@ -46,7 +46,7 @@ const Menu = ({menu, setLoader}) => {
 
   return (
     <>
-    <Container sx={{marginTop: 13}}>
+    <Container sx={{marginTop: 20}}>
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
         <div>
       <Typography className='un_line' variant="h" component="h2">Choose from Wide Varieties of Menu</Typography>

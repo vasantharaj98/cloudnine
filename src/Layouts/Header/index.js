@@ -99,7 +99,15 @@ const selectedMenu = (id) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{background: '#fff', color: '#000', py: 0.5, boxShadow:'0px 2px 10px #f1f1f1'}}>
+      <AppBar component="nav" sx={{background: '#FFFBEA', color: '#000', boxShadow:'0px 2px 10px #f1f1f1'}}>
+        <Typography
+            variant="span"
+            component="p"
+            sx={{ flexGrow: 1, display: {sm: 'block' }, fontSize:{xs: '14px', sm: '16px'}, textAlign: 'center', background: '#000', color: '#fff', py: 1, letterSpacing: 1}}
+          >
+            Order Your Favorite Food Now & <Typography component="span" sx={{color
+            : '#DB241E', letterSpacing: 1}}>Get 15% Off</Typography>
+        </Typography>
       <Container>
         <Toolbar>
           <IconButton
@@ -117,7 +125,7 @@ const selectedMenu = (id) => {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginTop: 1 }}
           >
           <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
-            <img src={logo} alt='logo' width={50}></img>
+            <img src={logo} alt='logo' width={60}></img>
             </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 8 }}>

@@ -6,7 +6,7 @@ const Menu = () => {
 
   return (
     <>
-    <Container sx={{marginTop: 13, display: 'flex', justifyContent:'center', alignItems:'center'}}>
+    <Container sx={{marginTop: 20, display: 'flex', justifyContent:'center', alignItems:'center'}}>
       <Typography variant="h" component="h2">Daily Special</Typography>
     </Container>
     </>

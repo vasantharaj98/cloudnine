@@ -65,7 +65,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ background: '#fafafa', paddingRight: 1, py: 2, overflow:"initial"}}
+        sx={{ background: '#fff', paddingRight: 1, py: 2, overflow:"initial"}}
       >
         {tab.map((val, index)=>{
             return(
@@ -75,7 +75,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
       </Tabs>
       {tabPanel.map((val, index)=>{
         return(
-            <TabPanel value={value} index={index} style={{width: '100%'}}>
+            <TabPanel value={value} index={index} style={{width: '100%', background:'#FFFBEA'}}>
             <div>
                 <div>
                 <Typography variant="h" component="h3" sx={{color:'#DB241E'}}>{val.name}</Typography>

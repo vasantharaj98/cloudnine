@@ -24,14 +24,14 @@ import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 import { Mainbutton } from '../../Components/Button';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Link } from '@mui/material';
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
-const socket = io('https://cloud-9-bar-grill.onrender.com', {
-  withCredentials: true,
-  extraHeaders: {
-    "my-custom-header": "abcd"
-  }
-});
+// const socket = io('https://cloudninebarandgrill.com/api', {
+//   withCredentials: true,
+//   extraHeaders: {
+//     "my-custom-header": "abcd"
+//   }
+// });
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -98,41 +98,41 @@ export default function CustomizedDialogs({cartcount, dishes, setDishes, setLoad
   const submitData = (e) =>{
     setLoader(true);
     e.preventDefault();
-    socket.emit('postOrder', dishdata);
-    socket.on('order', (data) => {
-      if(data){
-          setOrder(true);
+    // socket.emit('postOrder', dishdata);
+    // socket.on('order', (data) => {
+    //   if(data){
+    //       setOrder(true);
+    //      setDishes([]);
+    //      setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
+    //      setLoader(false);
+    //      setSuccess(true);
+    //   }
+    //   else{
+    //         setSuccess(false);
+    //         setLoader(false);
+    //   }
+    // });
+      fetch('https://cloudninebarandgrill.com/api/dish', {
+         method: 'POST',
+         body: JSON.stringify(dishdata),
+         headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+         },
+      })
+         .then((res) => {
+         res.json();
+         setOrder(true);
          setDishes([]);
          setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
          setLoader(false);
          setSuccess(true);
-      }
-      else{
+         }
+         )
+         .catch((err) => {
+            console.log(err.message);
             setSuccess(false);
             setLoader(false);
-      }
-    });
-      // fetch('https://cloudninebarandgrill.com/api/dish', {
-      //    method: 'POST',
-      //    body: JSON.stringify(dishdata),
-      //    headers: {
-      //       'Content-type': 'application/json; charset=UTF-8',
-      //    },
-      // })
-      //    .then((res) => {
-      //    res.json();
-      //    setOrder(true);
-      //    setDishes([]);
-      //    setDishdata({name:'', phone:'', email:'', message:'', order: [], total: ""});
-      //    setLoader(false);
-      //    setSuccess(true);
-      //    }
-      //    )
-      //    .catch((err) => {
-      //       console.log(err.message);
-      //       setSuccess(false);
-      //       setLoader(false);
-      //    });
+         });
    };
 
 if(!detail && !order)
@@ -330,14 +330,14 @@ if(detail && !order)
           <Typography component="p" variant='p' sx={{padding: 1, textAlign:"center", color: "#DB241E", lineHeight: 2}}>
            {success && "An email has been sent for your reference. You will get a notification to your mobile number regarding status of your order."}
           </Typography>
-          <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', gap: 5, margin: 15, flexDirection: 'column'  }}>
+          <div className='locate_order'>
             <div style={{display: 'flex', justifyContent: 'spaceBetween'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>1801 96 St #1899, North Battleford, SK S9A 0J1, Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 2, marginLeft: 1}}>CLOUD NINE BAR & GRILL 368 Bayly St W, Ajax, ON L1S 1P1, Canada</Typography>
             </div>
             <div style={{display: 'flex', justifyContent: 'spaceBetween' }}>
                 <LocalPhoneOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>+19876543210</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>+19059036360</Typography>
             </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', alignItems:'center'}}>

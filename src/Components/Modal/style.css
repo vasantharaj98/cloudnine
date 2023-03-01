@@ -1,6 +1,17 @@
+.locate_order{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 5px; 
+    margin: 15px; 
+    flex-direction: column  
+}
 @media (max-width: 500px){
     .cart{
         flex-direction: column;
         gap: 25px;
+    }
+    .locate_order{
+        align-items:start;
     }
 }

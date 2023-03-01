@@ -4,4 +4,5 @@ body, html {
   font-family: 'Montserrat', sans-serif !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: #FFFBEA;
 }

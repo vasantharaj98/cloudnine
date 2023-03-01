@@ -7,17 +7,15 @@ import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
 import { Mainbutton } from '../../Components/Button';
 import Divider from '@mui/material/Divider';
 import Facebook from '../../Assets/Images/Facebook.png';
-import Whatsapp from '../../Assets/Images/WhatsApp.png';
+import TikTok from '../../Assets/Images/TikTok.png';
 import Instagram from '../../Assets/Images/Instagram.png';
-import Twitter from '../../Assets/Images/Twitter.png';
-import Facebook_Mess from '../../Assets/Images/Facebook_messenger.png';
 import './style.css';
 
 export const SubFooter = () => {
   return (
     <Container sx={{marginTop: 5}}>
             <Typography className='un_line' variant="h" component="h2">Find Cloud Nine Restaurant at,</Typography>
-            <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>Our Cloud 9 Restaurant Could be Near You!</Typography>
+            <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>Our Cloud Nine Restaurant Could be Near You!</Typography>
             <Box
                 sx={{
                 width: "100%",
@@ -36,7 +34,7 @@ export const SubFooter = () => {
             <div>
             <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none", display: 'flex', justifyContent: 'spaceBetween', color: '#fff'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR & GRILL 368 Bayly St W, Ajax, ON L1S 1P1, Canada</Typography>
             </Link>
             </div>
             <div>
@@ -72,7 +70,7 @@ export const Footer = () => {
         <div>
             <Link href='https://goo.gl/maps/JZtXWi1vxqujv6kKA' target="_blank" sx={{textDecoration:"none", display: 'flex', justifyContent: 'spaceBetween', color: '#000'}}>
                 <FmdGoodOutlined/>
-                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>CLOUD NINE BAR &GRILL 386 Bayly St W Ajax ON L1S 6M3 Canada</Typography>
+                <Typography variant="p" component="p" sx={{ lineHeight: 1.5, marginLeft: 1}}>368 Bayly St W, Ajax, ON L1S 1P1, Canada</Typography>
             </Link>
             </div>
             <div>
@@ -89,6 +87,7 @@ export const Footer = () => {
                 <a href='#'><img src={Whatsapp} alt="wa"></img></a>
                 <a href='#'><img src={Facebook_Mess} alt="fb_m"></img></a> */}
                 <a href='https://instagram.com/cloudnineajax?igshid=NDk5N2NlZjQ=' target="_blank"><img src={Instagram} alt="insta"></img></a>
+                <a href='https://www.tiktok.com/@cloudnineajax' target="_blank"><img src={TikTok} alt="insta"></img></a>
             </div>
         </div>
     </div>

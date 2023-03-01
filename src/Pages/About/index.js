@@ -30,7 +30,7 @@ const About = () => {
     nextArrow: false
   };
   return (
-    <Container sx={{marginTop: 13}}>
+    <Container sx={{marginTop: 20}}>
     <Box
                 sx={{
                 width: "100%",
