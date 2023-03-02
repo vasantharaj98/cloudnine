@@ -32,6 +32,10 @@ const navItems = [
   path: '/dailyspecial'
 }, 
 {
+  text: 'Book Us',
+  path: '/bookus'
+}, 
+{
     text: 'Locations',
     path: '/ourlocation'
 }, 
@@ -62,6 +66,8 @@ const selectedMenu = (id) => {
         return setSelectid('Our Menu');
       case "/dailyspecial":
           return setSelectid('Daily Special');
+      case "/bookus":
+            return setSelectid('Book Us');
        case "/ourlocation":
         return setSelectid('Locations');
        case "/aboutus":
@@ -106,7 +112,7 @@ const selectedMenu = (id) => {
             sx={{ flexGrow: 1, display: {sm: 'block' }, fontSize:{xs: '14px', sm: '16px'}, textAlign: 'center', background: '#000', color: '#fff', py: 1, letterSpacing: 1}}
           >
             Order Your Favorite Food Now & <Typography component="span" sx={{color
-            : '#DB241E', letterSpacing: 1}}>Get 15% Off</Typography>
+            : '#DB241E', letterSpacing: 1, fontWeight: 800}}>Get 15% Off</Typography>
         </Typography>
       <Container>
         <Toolbar>

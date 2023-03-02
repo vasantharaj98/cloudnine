@@ -30,6 +30,10 @@ const RouteRoute = ({setLoader}) => {
             element={<DailySpecial/>}
           ></Route>
           <Route
+            path="/bookus"
+            element={<DailySpecial/>}
+          ></Route>
+          <Route
             path="/ourlocation"
             element={<OurLocation/>}
           ></Route>

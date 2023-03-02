@@ -14,8 +14,9 @@ import banner_5 from '../../Assets/Images/cloud5.jpeg';
 import banner_6 from '../../Assets/Images/cloud6.jpeg';
 import banner_7 from '../../Assets/Images/cloud7.jpeg';
 import './style.css';
+import FabButton from '../../Components/fabButton';
 
-const About = () => {
+const About = ({setSelectid}) => {
 
   const settings = {
     infinite: true,
@@ -30,6 +31,8 @@ const About = () => {
     nextArrow: false
   };
   return (
+    <>    
+    <FabButton setSelectid={setSelectid} path={'/ourmenu'} value={"Order Now"}/>
     <Container sx={{marginTop: 20}}>
     <Box
                 sx={{
@@ -79,6 +82,7 @@ const About = () => {
       </Grid>
     </Box>
     </Container>
+    </>
   )
 }
 

@@ -4,9 +4,12 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Typography, Link } from '@mui/material';
 import {FmdGoodOutlined, LocalPhoneOutlined} from '@mui/icons-material';
+import FabButton from '../../Components/fabButton';
 
-const Location = () => {
+const Location = ({setSelectid}) => {
   return (
+    <>
+    <FabButton setSelectid={setSelectid} path={'/ourmenu'} value={"Order Now"}/>
     <Container sx={{marginTop: 20}}>
     <Box
                 sx={{
@@ -70,6 +73,7 @@ const Location = () => {
       </Grid>
     </Box>
     </Container>
+    </>
   )
 }
 

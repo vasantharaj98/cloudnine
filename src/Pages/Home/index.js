@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import banner_1 from '../../Assets/Images/bg1.jpg';
 import banner_2 from '../../Assets/Images/bg2.jpg';
 import banner_3 from '../../Assets/Images/bg3.jpg';
+import FabButton from '../../Components/fabButton/index';
 
 const Home = ({setSelectid, setMenu}) => {
 
@@ -33,6 +34,7 @@ const Home = ({setSelectid, setMenu}) => {
 
   return (
     <>
+    <FabButton setSelectid={setSelectid} path={'/ourmenu'} value={"Order Now"}/>
     <div className='banner'>
         {/* <img src={banner} className="banner_bg" alt='banner' width="100%" height="100%"></img> */}
         <div>

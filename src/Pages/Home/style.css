@@ -48,3 +48,8 @@
         height: 400px;
     }
 }
+@media (max-width: 1450px){
+    .slider_img{
+        height: 550px;
+    }
+}

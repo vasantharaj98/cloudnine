@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { SubFooter } from '../../Layouts/Footer';
-import { Container } from '@mui/material';
+import { Container, Button } from '@mui/material';
 import { Typography } from '@mui/material';
 import Tabs from '../../Components/Tabs/index';
 import Modal from '../../Components/Modal/index';
-import {tabPanel} from './menu'
+import {tabPanel} from './menu';
+import FabButton from '../../Components/fabButton';
 
 const tab = [
   {name: "Salads"},
@@ -46,8 +47,11 @@ const Menu = ({menu, setLoader}) => {
 
   return (
     <>
+    <Button className='fabButton'>
+      <Modal cartcount={cartcount} setLoader={setLoader} dishes={dishes} setDishes={setDishes}></Modal>
+    </Button>
     <Container sx={{marginTop: 20}}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end'}}>
         <div>
       <Typography className='un_line' variant="h" component="h2">Choose from Wide Varieties of Menu</Typography>
       <Typography variant="p" className='footer_con' component="p" sx={{marginTop: 4, lineHeight: 2}}>We're Proud to Serve All Kinds of Dishes Browse Through Our Menu and Find Something For Everyone</Typography>
