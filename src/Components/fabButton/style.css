@@ -4,9 +4,6 @@
     right: 50px;
     z-index: 1111;
 }
-.fabButton:hover{
-    background: #DB241E !important;
-}
 @media (max-width: 500px){
     .fabButton{
         bottom: 10px;

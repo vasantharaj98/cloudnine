@@ -1,0 +1,11 @@
+.book_us{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+@media (max-width: 500px){
+    .book_us{
+        flex-wrap: wrap !important;
+    }
+}

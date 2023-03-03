@@ -10,6 +10,7 @@ import Ourmenu from '../src/Pages/Menu/index';
 import OurLocation from '../src/Pages/Location/index';
 import Aboutus from '../src/Pages/About/index';
 import DailySpecial from '../src/Pages/Dailyspecial/index';
+import Bookus from '../src/Pages/Bookus/index'
 
 const RouteRoute = ({setLoader}) => {
   const [selectid, setSelectid] = useState('');
@@ -31,7 +32,7 @@ const RouteRoute = ({setLoader}) => {
           ></Route>
           <Route
             path="/bookus"
-            element={<DailySpecial/>}
+            element={<Bookus/>}
           ></Route>
           <Route
             path="/ourlocation"
