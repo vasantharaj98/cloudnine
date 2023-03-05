@@ -29,7 +29,7 @@ const Menu = ({setSelectid, setLoader}) => {
     // https://cloudninebarandgrill.com/api/dish
     if(dishdata.email !== ""){
     setLoader(true);
-    fetch("http://localhost:8001/event", {
+    fetch("https://cloud-9-bar-grill.onrender.com/event", {
       method: "POST",
       body: JSON.stringify(dishdata),
       headers: {
