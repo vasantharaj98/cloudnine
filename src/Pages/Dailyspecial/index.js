@@ -14,15 +14,15 @@ import daily_7 from '../../Assets/Images/daily_7.png';
 
 const itemData = [
   {
-    img: daily_1,
+    img: daily_3,
     title: 'Breakfast',
   },
   {
-    img: daily_2,
+    img: daily_1,
     title: 'Burger',
   },
   {
-    img: daily_3,
+    img: daily_2,
     title: 'Camera',
   },
   {
