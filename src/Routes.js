@@ -32,7 +32,7 @@ const RouteRoute = ({setLoader}) => {
           ></Route>
           <Route
             path="/bookus"
-            element={<Bookus/>}
+            element={<Bookus setLoader={setLoader}/>}
           ></Route>
           <Route
             path="/ourlocation"

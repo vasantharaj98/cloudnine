@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from '@mui/material';
 import { Typography, Box, Grid, TextField, InputAdornment, Button } from '@mui/material';
-import banner_1 from '../../Assets/Images/cloud1.JPG';
+import banner_1 from '../../Assets/Images/bookTable.png';
 import FabButton from '../../Components/fabButton';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import './style.css';
 
-const Menu = ({setSelectid}) => {
+const Menu = ({setSelectid, setLoader}) => {
 
   const [dishdata, setDishdata] = React.useState({
     name: "",
@@ -17,9 +22,67 @@ const Menu = ({setSelectid}) => {
     timeOfEvent: ""
   });
 
+  const [open, setOpen] = React.useState(false);
+
+  const submitData = (e) => {
+    e.preventDefault();
+    // https://cloudninebarandgrill.com/api/dish
+    if(dishdata.email !== ""){
+    setLoader(true);
+    fetch("http://localhost:8001/event", {
+      method: "POST",
+      body: JSON.stringify(dishdata),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => {
+        res.json();
+        setDishdata({
+          name: "",
+          phone: "",
+          email: "",
+          eventType: "",
+          noOfPeople: "",
+          dateOfEvent: "",
+          timeOfEvent: ""
+        });
+        setLoader(false);
+        setOpen(true);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setLoader(false);
+      });
+    }
+  };
+
+    const handleClose = () => {
+    setOpen(false);
+  };
+
+  console.log("data", dishdata);
+
   return (
     <>
     <FabButton setSelectid={setSelectid} path={'/ourmenu'} value={"Order Now"}/>
+    <div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Your request has been submitted"}
+        </DialogTitle>
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
     <Container sx={{marginTop: 20}}>
     <Box
                 sx={{
@@ -56,6 +119,7 @@ const Menu = ({setSelectid}) => {
                 type="text"
                 placeholder='Enter Name'
                 variant="outlined"
+                value={dishdata.name}
                 sx={{
                   background:'#fff'
                 }}
@@ -69,6 +133,7 @@ const Menu = ({setSelectid}) => {
                 required
                 type="email"
                 placeholder='Enter Email'
+                value={dishdata.email}
                 variant="outlined"
                 sx={{
                   background:'#fff'
@@ -84,13 +149,19 @@ const Menu = ({setSelectid}) => {
                 type="number"
                 variant="outlined"
                 placeholder='Mobile Number'
+                value={dishdata.phone}
                 sx={{
                   background:'#fff'
+                }}
+                onInput={(e) => {
+                  e.target.value = Math.max(0, parseInt(e.target.value))
+                    .toString()
+                    .slice(0, 10);
                 }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">+1</InputAdornment>
-                  ),
+                  )
                 }}
                 onChange={(e) =>
                   setDishdata({ ...dishdata, phone: e.target.value })
@@ -102,6 +173,7 @@ const Menu = ({setSelectid}) => {
                 required
                 type="text"
                 placeholder='Name of the event'
+                value={dishdata.eventType}
                 variant="outlined"
                 sx={{
                   background:'#fff'
@@ -112,13 +184,19 @@ const Menu = ({setSelectid}) => {
               />
               <div className='book_us'>
                 <div style={{width: '100%'}}>
-                <Typography variant='p' component='p' style={{marginBottom: 3}}>Count</Typography>
+                <Typography variant='p' component='p' style={{marginBottom: 7}}>Count</Typography>
               <TextField
                 id="outlined-basic"
                 required
                 type="number"
                 placeholder='0'
                 variant="outlined"
+                value={dishdata.noOfPeople}
+                onInput={(e) => {
+                  e.target.value = Math.max(1, parseInt(e.target.value))
+                    .toString()
+                    .slice(0, 10);
+                }}
                 sx={{
                   background:'#fff',
                   width: '100%'
@@ -129,12 +207,13 @@ const Menu = ({setSelectid}) => {
               />
                 </div>
                 <div style={{width: '100%'}}>
-                <Typography variant='p' component='p' style={{marginBottom: 3}}>Event Date</Typography>
+                <Typography variant='p' component='p' style={{marginBottom: 7}}>Event Date</Typography>
                 <TextField
                 id="outlined-basic"
                 required
                 type="date"
                 placeholder='Event Date'
+                value={dishdata.dateOfEvent}
                 variant="outlined"
                 sx={{
                   background:'#fff',
@@ -146,13 +225,14 @@ const Menu = ({setSelectid}) => {
               />
                 </div>
                 <div style={{width: '100%'}}>
-                <Typography variant='p' component='p' style={{marginBottom: 3}}>Event Time</Typography>
+                <Typography variant='p' component='p' style={{marginBottom: 7}}>Event Time</Typography>
                 <TextField
                 id="outlined-basic"
                 required
                 placeholder='Event Time'
                 type="time"
                 variant="outlined"
+                value={dishdata.timeOfEvent}
                 sx={{
                   background:'#fff',
                   width:'100%'
@@ -171,6 +251,9 @@ const Menu = ({setSelectid}) => {
                 background: "#DB241E",
                 "&:hover": { backgroundColor: "#b61510" },
               }}
+              type="submit" 
+              onClick ={submitData}
+
             >
               Request Booking
             </Button>

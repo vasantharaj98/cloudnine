@@ -551,21 +551,7 @@ export default function CustomizedDialogs({
                 </Typography>
               </div>
             </div>
-            <Button
-              disabled={dishes.length === 0 ? "disabled" : ""}
-              sx={{
-                color: "#fff",
-                px: 7,
-                py: 1.5,
-                background: "#DB241E",
-                "&:hover": { backgroundColor: "#b61510" },
-              }}
-              onClick={() => {
-                setDetail(true);
-              }}
-            >
-              Proceed
-            </Button>
+            <Button disabled={dishdata.name === "" || dishdata.email === "" || dishdata.phone === "" ? "disabled" : ""} sx={{color:'#fff',px: 7, py:1.5, background:'#DB241E', "&:hover": {backgroundColor: "#b61510", }}} type="submit" onClick ={submitData}>Place Order</Button>
           </DialogActions>
         </BootstrapDialog>
       </div>
