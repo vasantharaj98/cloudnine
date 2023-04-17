@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import wingsImg from '../../Assets/Images/Wings2.png';
-import saladImg from '../../Assets/Images/Steak.png';
+import saladImg from '../../Assets/Images/Beet_Salad.png';
 import appetizersImg from '../../Assets/Images/Fishtaco.png';
 import cloudbbqImg from '../../Assets/Images/Halfrackribs.png';
 import lambshankImg from '../../Assets/Images/Lampshank.png';
@@ -13,10 +13,10 @@ import phillycheesestickImg from '../../Assets/Images/Phillycheesestick.png';
 import beetsaladImg from '../../Assets/Images/Beet_Salad.png';
 import PestochickenfutticineImg from '../../Assets/Images/Pestochickenfutticine.png';
 import CloudburgerImg from '../../Assets/Images/Cloudburger.png';
-import ButterchickenImg from '../../Assets/Images/Butterchicken.png';
+import ButterchickenImg from '../../Assets/Images/Steak.png';
 import BuffalochickenwrapImg from '../../Assets/Images/Buffalochickenwrap.png';
 import FujitasImg from '../../Assets/Images/Fujitas.png';
-import './style.css'
+import './style.css';
 import { Link } from "react-router-dom";
 
 export default function Responsive ({setMenu, setSelectid}) {

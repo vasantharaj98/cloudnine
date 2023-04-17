@@ -24,7 +24,7 @@ import { FmdGoodOutlined, LocalPhoneOutlined } from "@mui/icons-material";
 import { Mainbutton } from "../../Components/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Link } from "@mui/material";
-// import io from 'socket.io-client';
+import io from 'socket.io-client';
 
 // const socket = io('https://cloudninebarandgrill.com/api', {
 //   withCredentials: true,

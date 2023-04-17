@@ -30,11 +30,11 @@ export const tabPanel = [
       menuCoice: "Chopped lettuce, tomatoes, red onions, bell pepper, olives, cucumber, feta cheese and greek dressing",
       price: [{
           size: "M",
-          price: "8.45"
+          price: "7.95"
               },
               {
           size: "L",
-          price: "12.45"
+          price: "10.95"
               }]
     },
     {
@@ -42,7 +42,7 @@ export const tabPanel = [
       menuCoice: "Steak, shrimp, mixed greens hazelnuts, tomatoes, red onions, avocado, gorgonzola cheese, balsamic dressing",
       price: [{
           size: "",
-          price: "8.45"
+          price: "16.95"
               }]
     },
     {
@@ -50,7 +50,7 @@ export const tabPanel = [
       menuCoice: "Grilled chicken, bacon, red onion, avocado, cucumber, tomato, bell pepper, boiled egg, mixed cheese, with balsamic dressing",
       price: [{
           size: "",
-          price: "8.45"
+          price: "15.95"
               }]
     },
     {
@@ -58,7 +58,7 @@ export const tabPanel = [
       menuCoice: "Red beet, pineapple, goat cheese, mixed greens, celery, hazelnut, cucumber, balsamic glaze and olive oil",
       price: [{
           size: "",
-          price: "8.45"
+          price: "15.95"
               }]
     },
     {
@@ -308,22 +308,6 @@ export const tabPanel = [
             size: "Pork",
             price: "16.95"
                   }]
-  },
-  {
-    menuName: "Chicken Quarter Leg",
-    menuCoice: "Choice of red or green Thai curry with coconut milk, sweet pepper, bamboo shoots, carrot, onions, Baby corn, Bok choy & broccoli served with rice",
-    price: [{
-      size: "Chicken",
-      price: "16.95"
-          },
-          {
-          size: "Shrimp",
-          price: "18.95"
-                },
-                {
-                  size: "Steak",
-                  price: "21.95"
-                      }]
   },
   {
     menuName: "Butter Chicken",

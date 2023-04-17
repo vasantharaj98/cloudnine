@@ -3,43 +3,44 @@ import { Container, Box } from '@mui/material';
 import { Typography } from '@mui/material';
 import FabButton from '../../Components/fabButton';
 import ImageCard from '../../Components/ImageCard';
-import daily_1 from '../../Assets/Images/daily_1.png';
-import daily_2 from '../../Assets/Images/daily_2.png';
-import daily_3 from '../../Assets/Images/daily_3.png';
+import daily_1 from '../../Assets/Images/mon.jpeg';
+import daily_2 from '../../Assets/Images/tue.jpeg';
+import daily_3 from '../../Assets/Images/wed.jpeg';
 import daily_4 from '../../Assets/Images/daily_4.png';
-import daily_5 from '../../Assets/Images/daily_5.png';
-import daily_6 from '../../Assets/Images/daily_6.png';
-import daily_7 from '../../Assets/Images/daily_7.png';
+import daily_5 from '../../Assets/Images/fri.jpeg';
+import daily_6 from '../../Assets/Images/sat.jpeg';
+import daily_7 from '../../Assets/Images/sun.jpeg';
+import daily_8 from '../../Assets/Images/game_night.jpeg';
 
 
 const itemData = [
   {
-    img: daily_3,
-    title: 'Breakfast',
-  },
-  {
     img: daily_1,
-    title: 'Burger',
+    title: 'Monday',
   },
   {
     img: daily_2,
-    title: 'Camera',
+    title: 'Tuesday',
   },
   {
-    img: daily_4,
-    title: 'Coffee',
+    img: daily_3,
+    title: 'Wednesday',
   },
   {
     img: daily_5,
-    title: 'Hats',
+    title: 'Friday',
   },
   {
     img: daily_6,
-    title: 'Honey',
+    title: 'Saturday',
   },
   {
     img: daily_7,
-    title: 'Basketball',
+    title: 'Sunday',
+  },
+  {
+    img: daily_8,
+    title: 'Game Nught',
   }
 ];
 
