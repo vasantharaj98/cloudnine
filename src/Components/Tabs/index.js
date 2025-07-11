@@ -94,7 +94,7 @@ export default function VerticalTabs({tab, tabPanel, dishes, dish, setDish, menu
                               return(
                               <div key={index}  style={{display: "flex", justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
                                 {(!updatedDish.includes(`${v.menuName} ${pr.size}`)) ?
-                                <Button disabled sx={{color:'#fff', width: "80px", height:"32px", lineHeight:"19px", background:'#0000002e', "&:hover": {backgroundColor: "#b61510", }}} onClick={() => {
+                                <Button sx={{color:'#fff', width: "80px", height:"32px", lineHeight:"19px", backgroundColor:'#000000', "&:hover": {backgroundColor: "#b61510", }}} onClick={() => {
                                   setDish({dishname: `${v.menuName} ${pr.size}`, qty: 1, price: pr.price});
                                 }}>Add</Button>
                                   :

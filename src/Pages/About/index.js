@@ -71,7 +71,7 @@ const About = ({setSelectid}) => {
         <Grid item md={12} >
           <Grid item md={12} sx={{padding: 5}}>
           <Typography className='un_line' variant="h" component="h2">About us,</Typography>
-            <Typography variant="p" component="p" sx={{marginTop: 4, lineHeight: 2}}><b>Cloud Nine</b> is a locally owned upscale sports bar in Ajax, Ontario. We operate a family-friendly restaurant that values quality over anything else. We are well known for our pleasant atmosphere, great food and quality drinks for an affordable price. We also offer party bookings at no additional charge.
+            <Typography variant="p" component="p" sx={{marginTop: 4, lineHeight: 2}}><b>Boon Bite</b> is a locally owned upscale sports bar in Ajax, Ontario. We operate a family-friendly restaurant that values quality over anything else. We are well known for our pleasant atmosphere, great food and quality drinks for an affordable price. We also offer party bookings at no additional charge.
           </Typography>
           {/* <Typography variant="p" component="p" sx={{marginTop: 2, lineHeight: 2}}>The casual atmosphere, combined with big-screen high-definition TVs in the sports bar, makes Boston Pizza as fun for families as it is for teams and groups of all ages. Most of our restaurants also feature an outdoor patio for those days when guests want to sit back and soak up the sun.
       </Typography>

@@ -27,10 +27,10 @@ const navItems = [
     text: 'Our Menu',
     path: '/ourmenu'
 }, 
-{
-  text: 'Daily Special',
-  path: '/dailyspecial'
-}, 
+// {
+//   text: 'Daily Special',
+//   path: '/dailyspecial'
+// }, 
 {
   text: 'Book Us',
   path: '/bookus'
@@ -82,7 +82,8 @@ const selectedMenu = (id) => {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
       <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
-      <img src={logo} alt='logo' width={80}></img>
+      <h4 style={{color:'#000'}}>Boon Bite</h4>
+      {/* <img src={logo} alt='logo' width={80}></img> */}
       </Link>
       </Typography>
       <Divider />
@@ -131,7 +132,8 @@ const selectedMenu = (id) => {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, marginTop: 1 }}
           >
           <Link onClick={ () => selectedMenu ('Home') } to='/' style={{textDecoration: 'none'}}>
-            <img src={logo} alt='logo' width={60}></img>
+                <h2 style={{color:'#000'}}>Boon Bite</h2>
+            {/* <img src={logo} alt='logo' width={60}></img> */}
             </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 8 }}>

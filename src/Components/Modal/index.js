@@ -636,7 +636,7 @@ export default function CustomizedDialogs({
                   component="p"
                   sx={{ lineHeight: 2, marginLeft: 1 }}
                 >
-                  CLOUD NINE BAR & GRILL 368 Bayly St W, Ajax, ON L1S 1P1,
+                  Boon Bite BAR & GRILL 368 Bayly St W, Ajax, ON L1S 1P1,
                   Canada
                 </Typography>
               </div>
